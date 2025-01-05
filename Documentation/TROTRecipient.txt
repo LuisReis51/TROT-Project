@@ -1,0 +1,8 @@
+TRTO Recipient 
+
+New Account Generated!
+Address: rfvd9orZgjbuNueGeiFHWb7DbKM3SMw7Dt
+Seed: sEdTD36arkZS7yMUrVJxcR6V8Y97EZz
+
+IMPORTANT: Save these credentials securely!
+You will need to fund this account with at least 10 XRP to activate it

@@ -1,0 +1,11 @@
+{
+  "name": "TROT Community Pillar Badge",
+  "description": "Cornerstone of the TROT community. Recognition for outstanding contribution to platform growth.",
+  "image": "badge_community_pillar.png",
+  "animation_url": "badge_community_pillar_animated.webp",
+  "attributes": {
+    "badge_type": "community_pillar",
+    "rarity": "Epic",
+    "created_at": "2025-01-05T12:10:11.386Z"
+  }
+}

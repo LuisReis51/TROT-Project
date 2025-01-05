@@ -1,0 +1,11 @@
+{
+  "name": "TROT Secure Guardian Badge",
+  "description": "Specialist in secure and confidential transport. Awarded for maintaining the highest standards of security and trust.",
+  "image": "badge_secure_guardian.png",
+  "animation_url": "badge_secure_guardian_animated.webp",
+  "attributes": {
+    "badge_type": "secure_guardian",
+    "rarity": "Rare",
+    "created_at": "2025-01-05T12:09:52.198Z"
+  }
+}

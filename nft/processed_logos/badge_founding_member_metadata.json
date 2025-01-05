@@ -1,0 +1,11 @@
+{
+  "name": "TROT Founding Member Badge",
+  "description": "Original supporter and pioneer of the TROT platform. A mark of distinction for early platform adopters.",
+  "image": "badge_founding_member.png",
+  "animation_url": "badge_founding_member_animated.webp",
+  "attributes": {
+    "badge_type": "founding_member",
+    "rarity": "Legendary",
+    "created_at": "2025-01-05T12:10:02.097Z"
+  }
+}

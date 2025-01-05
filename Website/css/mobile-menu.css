@@ -1,0 +1,112 @@
+/* Mobile Menu Styles */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger {
+        width: 30px;
+        height: 3px;
+        background: #38c695;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger:before,
+    .hamburger:after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background: #38c695;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger:before {
+        top: -8px;
+    }
+
+    .hamburger:after {
+        bottom: -8px;
+    }
+
+    /* Active hamburger */
+    .menu-open .hamburger {
+        background: transparent;
+    }
+
+    .menu-open .hamburger:before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .menu-open .hamburger:after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    /* Mobile menu container */
+    .primary-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(38, 39, 50, 0.98);
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .menu-open .primary-menu {
+        right: 0;
+    }
+
+    /* Menu items */
+    .primary-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .primary-menu li {
+        margin: 20px 0;
+    }
+
+    .primary-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .primary-menu a:hover {
+        color: #38c695;
+    }
+
+    /* Overlay */
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .menu-open .menu-overlay {
+        display: block;
+    }
+}

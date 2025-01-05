@@ -1,0 +1,121 @@
+{
+    "base_badges": {
+        "service": {
+            "shape": "hexagon",
+            "color_scheme": {
+                "road_master": {
+                    "primary": "#2E3192",
+                    "secondary": "#00AEEF",
+                    "accent": "#FFD700",
+                    "icon": "route-network"
+                },
+                "time_keeper": {
+                    "primary": "#00A651",
+                    "secondary": "#39B54A",
+                    "accent": "#FFFFFF",
+                    "icon": "precision-clock"
+                },
+                "secure_guardian": {
+                    "primary": "#662D91",
+                    "secondary": "#92278F",
+                    "accent": "#C6C6C6",
+                    "icon": "shield-lock"
+                }
+            },
+            "animations": {
+                "unlock": "ripple-outward",
+                "display": "gentle-rotate",
+                "milestone": "starburst"
+            }
+        },
+        "achievement": {
+            "shape": "shield",
+            "variants": {
+                "local_hero": {
+                    "primary": "#ED1C24",
+                    "secondary": "#C1272D",
+                    "accent": "#FFFFFF",
+                    "icon": "community-star"
+                },
+                "eco_warrior": {
+                    "primary": "#22B573",
+                    "secondary": "#009245",
+                    "accent": "#FFFFFF",
+                    "icon": "leaf-cycle"
+                }
+            }
+        },
+        "special": {
+            "shape": "star",
+            "variants": {
+                "founding_member": {
+                    "primary": "#FFD700",
+                    "secondary": "#FFA500",
+                    "accent": "#000000",
+                    "icon": "foundation-pillar",
+                    "effect": "golden-aura"
+                },
+                "emergency_responder": {
+                    "primary": "#FF0000",
+                    "secondary": "#8B0000",
+                    "accent": "#FFFFFF",
+                    "icon": "medical-cross",
+                    "effect": "pulse-glow"
+                }
+            }
+        }
+    },
+    "avatar_system": {
+        "base_models": {
+            "driver": {
+                "variants": ["casual", "professional", "emergency"],
+                "customization_points": ["uniform", "vehicle", "accessories"]
+            }
+        },
+        "equipment": {
+            "vehicles": {
+                "standard": "delivery-van",
+                "eco": "electric-vehicle",
+                "emergency": "rapid-response-vehicle",
+                "secure": "armored-transport"
+            },
+            "accessories": {
+                "standard": ["phone", "scanner"],
+                "secure": ["security-badge", "encrypted-device"],
+                "medical": ["med-kit", "temperature-monitor"]
+            }
+        },
+        "status_effects": {
+            "active": "green-pulse",
+            "en_route": "blue-motion-trail",
+            "priority": "golden-outline",
+            "emergency": "red-pulse"
+        },
+        "achievement_effects": {
+            "milestone": "sparkle-burst",
+            "special_task": "glowing-aura",
+            "community": "connection-lines"
+        }
+    },
+    "animation_specs": {
+        "badge_effects": {
+            "unlock": {
+                "duration": "1.5s",
+                "keyframes": ["scale-up", "rotate", "shine"],
+                "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+            },
+            "milestone": {
+                "duration": "2s",
+                "keyframes": ["starburst", "particle-emission", "settle"],
+                "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+            }
+        },
+        "avatar_effects": {
+            "level_up": {
+                "duration": "2.5s",
+                "keyframes": ["glow", "transform", "stabilize"],
+                "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "TROT Eco Warrior Badge",
+  "description": "Champion of environmentally conscious delivery. Recognition for promoting and implementing sustainable delivery practices.",
+  "image": "badge_eco_warrior.png",
+  "animation_url": "badge_eco_warrior_animated.webp",
+  "attributes": {
+    "badge_type": "eco_warrior",
+    "rarity": "Uncommon",
+    "created_at": "2025-01-05T12:09:56.904Z"
+  }
+}

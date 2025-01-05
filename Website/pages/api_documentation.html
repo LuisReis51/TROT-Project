@@ -1,0 +1,65 @@
+<!-- wp:cover {"overlayColor":"black","minHeight":300,"align":"full"} -->
+<div class="wp-block-cover alignfull">
+    <div class="wp-block-cover__inner-container">
+        <h1 class="has-text-align-center has-white-color">TROT API Documentation</h1>
+        <p class="has-text-align-center has-white-color">Technical Integration Guide</p>
+    </div>
+</div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"align":"wide"} -->
+<div class="wp-block-group alignwide">
+    <h2>XRPL Integration</h2>
+    <pre class="wp-block-code"><code>
+// Connect to XRPL Testnet
+const client = new xrpl.Client('wss://s.altnet.rippletest.net:51233')
+await client.connect()
+
+// Create Trust Line for TROT
+const trustSet = {
+    "TransactionType": "TrustSet",
+    "Account": "your_account",
+    "LimitAmount": {
+        "currency": "TROT",
+        "issuer": "issuer_address",
+        "value": "1000000000"
+    }
+}
+    </code></pre>
+
+    <h2>Route Optimization API</h2>
+    <pre class="wp-block-code"><code>
+POST /api/v1/optimize-route
+{
+    "start_point": {"lat": 41.5, "lng": -87.3},
+    "destinations": [
+        {"lat": 41.6, "lng": -87.4},
+        {"lat": 41.7, "lng": -87.5}
+    ],
+    "optimization_params": {
+        "priority": "time|cost|efficiency",
+        "token_holder_level": "standard|premium"
+    }
+}
+    </code></pre>
+
+    <h2>Token Integration</h2>
+    <ul>
+        <li>WebSocket Endpoints</li>
+        <li>REST API Endpoints</li>
+        <li>Smart Contract Interfaces</li>
+        <li>Event Webhooks</li>
+    </ul>
+
+    <h2>Authentication</h2>
+    <pre class="wp-block-code"><code>
+// JWT Authentication
+const auth = {
+    headers: {
+        'Authorization': 'Bearer ${TROT_API_KEY}',
+        'Content-Type': 'application/json'
+    }
+}
+    </code></pre>
+</div>
+<!-- /wp:group -->

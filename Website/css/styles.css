@@ -1,0 +1,72 @@
+/* TROT Website Styles */
+
+/* Global Styles */
+:root {
+    --primary-color: #38c695;
+    --secondary-color: #262732;
+    --accent-color: #fc5f45;
+    --text-color: #333333;
+    --light-bg: #f8f8f8;
+}
+
+/* Typography */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Buttons */
+.wp-block-button__link {
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.wp-block-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Token Features */
+.token-stats {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Documentation */
+.documentation-nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px;
+    z-index: 100;
+}
+
+/* Code Blocks */
+pre.wp-block-code {
+    background: var(--light-bg);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* FAQs */
+details {
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--light-bg);
+    border-radius: 5px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-section {
+    margin-bottom: 40px;
+}

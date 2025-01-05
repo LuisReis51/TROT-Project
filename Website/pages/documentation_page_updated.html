@@ -1,0 +1,108 @@
+<!-- wp:cover {"overlayColor":"black","minHeight":300,"align":"full"} -->
+<div class="wp-block-cover alignfull">
+    <div class="wp-block-cover__inner-container">
+        <h1 class="has-text-align-center has-white-color">TROT Documentation</h1>
+        <p class="has-text-align-center has-white-color">Complete Technical Guide</p>
+    </div>
+</div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"align":"wide"} -->
+<div class="wp-block-group alignwide">
+    <!-- wp:buttons {"align":"center","className":"documentation-nav"} -->
+    <div class="wp-block-buttons aligncenter">
+        <div class="wp-block-button">
+            <a href="#getting-started" class="wp-block-button__link">Getting Started</a>
+        </div>
+        <div class="wp-block-button">
+            <a href="#technical-specs" class="wp-block-button__link">Technical Specs</a>
+        </div>
+        <div class="wp-block-button">
+            <a href="/api-documentation" class="wp-block-button__link">API Docs</a>
+        </div>
+        <div class="wp-block-button">
+            <a href="/faqs" class="wp-block-button__link">FAQs</a>
+        </div>
+    </div>
+    <!-- /wp:buttons -->
+
+    <div id="getting-started">
+        <h2>Getting Started</h2>
+        <!-- Technical Implementation Details -->
+        <h3>XRPL Integration</h3>
+        <pre class="wp-block-code"><code>
+// Initialize XRPL Client
+const client = new xrpl.Client('wss://s.altnet.rippletest.net:51233')
+await client.connect()
+
+// Check TROT Balance
+const response = await client.request({
+    command: 'account_lines',
+    account: 'your_address',
+    ledger_index: 'validated'
+})
+        </code></pre>
+
+        <h3>Smart Contract Integration</h3>
+        <pre class="wp-block-code"><code>
+// TROT Smart Contract Example
+const trotContract = {
+    features: {
+        staking: true,
+        governance: true,
+        routeOptimization: true
+    },
+    methods: {
+        stake(amount, duration),
+        vote(proposalId, decision),
+        optimizeRoute(params)
+    }
+}
+        </code></pre>
+    </div>
+
+    <div id="technical-specs">
+        <h2>Technical Specifications</h2>
+        
+        <h3>Route Optimization Algorithm</h3>
+        <ul>
+            <li>AI-powered pathfinding</li>
+            <li>Real-time traffic integration</li>
+            <li>Multi-point optimization</li>
+            <li>Priority routing for token holders</li>
+        </ul>
+
+        <h3>Token Features</h3>
+        <ul>
+            <li>Standard: XRP Ledger Token</li>
+            <li>Decimals: 6</li>
+            <li>Transfer Speed: 3-5 seconds</li>
+            <li>Smart Contract Enabled</li>
+        </ul>
+
+        <h3>Security Features</h3>
+        <ul>
+            <li>XRPL consensus mechanism</li>
+            <li>Multi-signature support</li>
+            <li>Regular security audits</li>
+            <li>Automated monitoring</li>
+        </ul>
+    </div>
+</div>
+<!-- /wp:group -->
+
+<style>
+.documentation-nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 15px;
+    z-index: 100;
+}
+pre.wp-block-code {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+</style>

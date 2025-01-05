@@ -1,0 +1,11 @@
+{
+  "name": "TROT Reliability Star Badge",
+  "description": "Paragon of consistency and dependability. Honors unwavering commitment to service excellence.",
+  "image": "badge_reliability_star.png",
+  "animation_url": "badge_reliability_star_animated.webp",
+  "attributes": {
+    "badge_type": "reliability_star",
+    "rarity": "Rare",
+    "created_at": "2025-01-05T12:10:19.840Z"
+  }
+}

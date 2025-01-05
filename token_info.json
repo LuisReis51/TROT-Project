@@ -1,0 +1,29 @@
+{
+    "token": {
+        "name": "TROT",
+        "symbol": "TROT",
+        "issuer": "rakCekSaQvVjQbcQdbUjXNixSFV2U7vB3u",
+        "currency_code": "54524F5400000000000000000000000000000000",
+        "decimals": 6,
+        "website": "YOUR_WEBSITE_URL",
+        "description": "TROT Token - A Digital Asset on the XRP Ledger",
+        "logo": {
+            "url": "YOUR_HOSTED_URL/trot_token_512.png",
+            "thumbnail": "YOUR_HOSTED_URL/trot_token_128.png",
+            "format": "png"
+        },
+        "social_media": {
+            "twitter": "YOUR_TWITTER",
+            "telegram": "YOUR_TELEGRAM",
+            "discord": "YOUR_DISCORD"
+        }
+    },
+    "markets": {
+        "primary_market": "XRPL DEX",
+        "other_markets": []
+    },
+    "documentation": {
+        "whitepaper": "URL_TO_WHITEPAPER",
+        "technical_docs": "URL_TO_TECHNICAL_DOCS"
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "TROT Innovation Pioneer Badge",
+  "description": "Trailblazer in delivery innovation. Celebrates creative solutions and forward-thinking approaches.",
+  "image": "badge_innovation_pioneer.png",
+  "animation_url": "badge_innovation_pioneer_animated.webp",
+  "attributes": {
+    "badge_type": "innovation_pioneer",
+    "rarity": "Mythic",
+    "created_at": "2025-01-05T12:10:15.619Z"
+  }
+}

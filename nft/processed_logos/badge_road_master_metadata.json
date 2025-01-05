@@ -1,0 +1,11 @@
+{
+  "name": "TROT Road Master Badge",
+  "description": "Master of efficient routes and timely deliveries. This badge recognizes excellence in route optimization and delivery performance.",
+  "image": "badge_road_master.png",
+  "animation_url": "badge_road_master_animated.webp",
+  "attributes": {
+    "badge_type": "road_master",
+    "rarity": "Epic",
+    "created_at": "2025-01-05T12:09:46.925Z"
+  }
+}

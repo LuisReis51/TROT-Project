@@ -1,0 +1,11 @@
+{
+  "name": "TROT Time Keeper Badge",
+  "description": "Guardian of punctuality and efficiency. Awarded for exceptional on-time delivery performance.",
+  "image": "badge_time_keeper.png",
+  "animation_url": "badge_time_keeper_animated.webp",
+  "attributes": {
+    "badge_type": "time_keeper",
+    "rarity": "Rare",
+    "created_at": "2025-01-05T12:10:07.160Z"
+  }
+}

@@ -1,0 +1,93 @@
+/* Coin Logo Animation */
+.coin-logo-container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 2em auto;
+}
+
+.coin {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate 15s linear infinite;
+}
+
+.coin:hover {
+    animation-play-state: paused;
+}
+
+.coin-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #38c695, #262732);
+    box-shadow: 0 0 20px rgba(56, 198, 149, 0.3);
+}
+
+.coin-front {
+    transform: rotateY(0deg);
+}
+
+.coin-back {
+    transform: rotateY(180deg);
+}
+
+.knight-logo {
+    width: 70%;
+    height: 70%;
+    fill: white;
+}
+
+/* Shine effect */
+.coin-face::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(45deg, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 45%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.1) 55%,
+        transparent 100%);
+    transform: translateX(-100%);
+    animation: shine 5s infinite;
+}
+
+/* Edge effect */
+.coin::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #2a2a2a;
+    transform: rotateY(90deg);
+}
+
+@keyframes rotate {
+    0% { transform: rotateY(0); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    20% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .coin-logo-container {
+        width: 150px;
+        height: 150px;
+    }
+}

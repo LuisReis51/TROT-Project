@@ -1,0 +1,12 @@
+{
+    "TransactionType": "TrustSet",
+    "Account": "rsKiJaroLVqsvudVehUwmY9gpmDhkr2Rec",
+    "Fee": "12",
+    "Flags": 131072,
+    "LimitAmount": {
+        "currency": "TROT",
+        "issuer": "rsKiJaroLVqsvudVehUwmY9gpmDhkr2Rec",
+        "value": "8000000000"
+    },
+    "Sequence": 3681968
+}

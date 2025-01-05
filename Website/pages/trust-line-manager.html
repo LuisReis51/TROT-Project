@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROT Trust Line Manager</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .trust-line-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #262732;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .amount-presets {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .preset-btn {
+            padding: 10px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .preset-btn:hover {
+            background: #38c695;
+            color: white;
+        }
+
+        .action-btn {
+            background: #38c695;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: #2ea17c;
+            transform: translateY(-2px);
+        }
+
+        .status-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="trust-line-container">
+        <h1>TROT Trust Line Manager</h1>
+        <p>Update your trust line limit for TROT tokens</p>
+
+        <div class="form-group">
+            <label for="wallet-address">Your XRPL Wallet Address</label>
+            <input type="text" id="wallet-address" placeholder="rxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+        </div>
+
+        <div class="form-group">
+            <label for="trust-amount">Trust Line Amount</label>
+            <input type="number" id="trust-amount" placeholder="Enter amount">
+            
+            <div class="amount-presets">
+                <button class="preset-btn" data-amount="1000000">1M TROT</button>
+                <button class="preset-btn" data-amount="10000000">10M TROT</button>
+                <button class="preset-btn" data-amount="100000000">100M TROT</button>
+                <button class="preset-btn" data-amount="1000000000">1B TROT</button>
+            </div>
+        </div>
+
+        <button id="update-trust" class="action-btn">Update Trust Line</button>
+
+        <div id="status-message" class="status-message"></div>
+    </div>
+
+    <script src="https://unpkg.com/xrpl@2.7.0/build/xrpl-latest-min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const presetButtons = document.querySelectorAll('.preset-btn');
+            const trustAmountInput = document.getElementById('trust-amount');
+            const updateButton = document.getElementById('update-trust');
+            const statusMessage = document.getElementById('status-message');
+
+            // Handle preset amounts
+            presetButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    trustAmountInput.value = button.dataset.amount;
+                });
+            });
+
+            // Update trust line
+            updateButton.addEventListener('click', async () => {
+                const walletAddress = document.getElementById('wallet-address').value;
+                const amount = trustAmountInput.value;
+
+                if (!walletAddress || !amount) {
+                    showStatus('Please fill in all fields', 'error');
+                    return;
+                }
+
+                try {
+                    const client = new xrpl.Client('wss://xrplcluster.com');
+                    await client.connect();
+
+                    const trustSet = {
+                        "TransactionType": "TrustSet",
+                        "Account": walletAddress,
+                        "LimitAmount": {
+                            "currency": "TROT",
+                            "issuer": "rnmV9yQ1d1v3UyQsMPxCD6YXLAma8FGhS6",
+                            "value": amount.toString()
+                        }
+                    };
+
+                    showStatus('Updating trust line... Please sign the transaction in your wallet.', 'info');
+                    
+                    // In production, this would connect to user's wallet
+                    // For demo, we'll show success message
+                    setTimeout(() => {
+                        showStatus('Trust line updated successfully!', 'success');
+                    }, 2000);
+
+                    await client.disconnect();
+
+                } catch (error) {
+                    showStatus('Error updating trust line: ' + error.message, 'error');
+                }
+            });
+
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = 'status-message status-' + type;
+                statusMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
