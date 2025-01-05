@@ -8,8 +8,8 @@
         "website": "YOUR_WEBSITE_URL",
         "description": "TROT Token - A Digital Asset on the XRP Ledger",
         "logo": {
-            "url": "YOUR_HOSTED_URL/trot_token_512.png",
-            "thumbnail": "YOUR_HOSTED_URL/trot_token_128.png",
+            "url": "https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_512.png",
+            "thumbnail": "https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_128.png",
             "format": "png"
         },
         "social_media": {
