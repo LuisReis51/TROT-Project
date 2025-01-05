@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TROT Token Logo Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .logo-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .logo-test {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .logo-test img {
+            margin-right: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .success {
+            background: #e6ffe6;
+            color: #006600;
+        }
+        .error {
+            background: #ffe6e6;
+            color: #660000;
+        }
+    </style>
+</head>
+<body>
+    <h1>TROT Token Logo Test Page</h1>
+    
+    <div class="logo-container">
+        <h2>Main Logo (512x512)</h2>
+        <div class="logo-test">
+            <img src="https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_512.png" 
+                 alt="TROT Token Main Logo" 
+                 width="512" 
+                 height="512"
+                 onerror="this.parentElement.innerHTML += '<div class=\'status error\'>❌ Error loading main logo</div>'"
+                 onload="this.parentElement.innerHTML += '<div class=\'status success\'>✅ Main logo loaded successfully</div>'">
+        </div>
+
+        <h2>Thumbnail Logo (128x128)</h2>
+        <div class="logo-test">
+            <img src="https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_128.png" 
+                 alt="TROT Token Thumbnail" 
+                 width="128" 
+                 height="128"
+                 onerror="this.parentElement.innerHTML += '<div class=\'status error\'>❌ Error loading thumbnail</div>'"
+                 onload="this.parentElement.innerHTML += '<div class=\'status success\'>✅ Thumbnail loaded successfully</div>'">
+        </div>
+    </div>
+
+    <div class="logo-container">
+        <h2>Token Information</h2>
+        <pre id="tokenInfo"></pre>
+    </div>
+
+    <script>
+        fetch('../token_info.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('tokenInfo').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                document.getElementById('tokenInfo').textContent = 'Error loading token info: ' + error;
+            });
+    </script>
+</body>
+</html>

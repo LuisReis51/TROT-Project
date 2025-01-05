@@ -5,7 +5,7 @@
         "issuer": "rakCekSaQvVjQbcQdbUjXNixSFV2U7vB3u",
         "currency_code": "54524F5400000000000000000000000000000000",
         "decimals": 6,
-        "website": "YOUR_WEBSITE_URL",
+        "website": "https://github.com/LuisReis51/TROT-Project",
         "description": "TROT Token - A Digital Asset on the XRP Ledger",
         "logo": {
             "url": "https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_512.png",
