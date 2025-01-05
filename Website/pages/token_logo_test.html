@@ -26,6 +26,10 @@
         }
         .logo-test img {
             margin-right: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
         }
         h2 {
             color: #333;
@@ -43,6 +47,12 @@
             background: #ffe6e6;
             color: #660000;
         }
+        pre {
+            background: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
@@ -53,8 +63,8 @@
         <div class="logo-test">
             <img src="https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_512.png" 
                  alt="TROT Token Main Logo" 
-                 width="512" 
-                 height="512"
+                 width="256" 
+                 height="256"
                  onerror="this.parentElement.innerHTML += '<div class=\'status error\'>❌ Error loading main logo</div>'"
                  onload="this.parentElement.innerHTML += '<div class=\'status success\'>✅ Main logo loaded successfully</div>'">
         </div>
@@ -76,14 +86,23 @@
     </div>
 
     <script>
-        fetch('../token_info.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('tokenInfo').textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => {
-                document.getElementById('tokenInfo').textContent = 'Error loading token info: ' + error;
-            });
+        const tokenInfo = {
+            "token": {
+                "name": "TROT",
+                "symbol": "TROT",
+                "issuer": "rakCekSaQvVjQbcQdbUjXNixSFV2U7vB3u",
+                "currency_code": "54524F5400000000000000000000000000000000",
+                "decimals": 6,
+                "website": "https://github.com/LuisReis51/TROT-Project",
+                "description": "TROT Token - A Digital Asset on the XRP Ledger",
+                "logo": {
+                    "url": "https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_512.png",
+                    "thumbnail": "https://raw.githubusercontent.com/LuisReis51/TROT-Project/main/nft/token_logo/trot_token_128.png",
+                    "format": "png"
+                }
+            }
+        };
+        document.getElementById('tokenInfo').textContent = JSON.stringify(tokenInfo, null, 2);
     </script>
 </body>
 </html>
